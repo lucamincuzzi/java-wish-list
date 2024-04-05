@@ -2,7 +2,7 @@ package org.experis.learning;
 
 import java.util.Objects;
 
-public class Regalo {
+public class Regalo implements Comparable<Regalo> {
     // Attributi
     private String nome;
 
@@ -17,10 +17,11 @@ public class Regalo {
         return nome;
     }
 
+        // Override di metodi Object
     @Override
     public String toString() {
-        return "Regalo{" +
-                "nome='" + nome + '\'' +
+        return "regalo: {" +
+                "nome = '" + nome + '\'' +
                 '}';
     }
 
@@ -35,5 +36,10 @@ public class Regalo {
     @Override
     public int hashCode() {
         return Objects.hashCode(nome);
+    }
+
+    @Override
+    public int compareTo(Regalo r) {
+        return getNome().compareTo(r.getNome());
     }
 }
